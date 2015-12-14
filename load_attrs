@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd /var/www/miq/vmdb
+
+script/rails runner /root/migration-stuff/load_vm_attrs.rb
+cd -
