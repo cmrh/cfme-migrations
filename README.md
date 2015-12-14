@@ -54,4 +54,4 @@ Artificial conditions will have to be created to test.
 ###########
 # Credit
 ###########
-Original scripts came from Jeff Cutter
+Original scripts came from Jeff Cutter https://github.com/jeffmcutter
