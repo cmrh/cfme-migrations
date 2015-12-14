@@ -6,6 +6,7 @@ Used for dumping all vm attributes to a file and loading the attributes back to 
 Use case is for a vcenter migration where the data on vcenter is not exported from the old vcenter to the new one.
 This results in a new UUID's being created and to ManageIQ/Cloudforms, they all look like new VMs. All attributes created for
 the VM's before will then be lost. 
+The attaributes to be migrated are owner, group, tags and retirement date.
 
 dump\_attrs - shell script to run rails and dump\_vm\_attrs.rb and dump the attributes to a file
 load\_attrs - shell script to run rails and load\_vm\_attrs.rb and load the vm attributes to the vmdb
