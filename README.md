@@ -8,10 +8,10 @@ This results in a new UUID's being created and to ManageIQ/Cloudforms, they all 
 the VM's before will then be lost. 
 The attaributes to be migrated are owner, group, tags and retirement date.
 
-dump\_attrs - shell script to run rails and dump\_vm\_attrs.rb and dump the attributes to a file
-load\_attrs - shell script to run rails and load\_vm\_attrs.rb and load the vm attributes to the vmdb
-dump\_vm\_attrs.rb - Ruby script run by rails
-load\_vm\_attrs.rb - Ruby script run by rails
+- dump\_attrs - shell script to run rails and dump\_vm\_attrs.rb and dump the attributes to a file
+- load\_attrs - shell script to run rails and load\_vm\_attrs.rb and load the vm attributes to the vmdb
+- dump\_vm\_attrs.rb - Ruby script run by rails
+- load\_vm\_attrs.rb - Ruby script run by rails
 
 #############
 #Instructions
@@ -27,22 +27,22 @@ load\_vm\_attrs.rb - Ruby script run by rails
 ############
 # Notes
 ############
-- As is, the ruby scripts will only dump VM attributes. To include templates, change the following section in dump\_vm\_attrs.rb
-
+As is, the ruby scripts will only dump VM attributes. To include templates, change the following section in dump\_vm\_attrs.rb
+```ruby
   $evm.vmdb('vm').all.each do |v|
-
+```
 to
-
+```ruby
   $evm.vmdb(:VmOrTemplate).all.each do |v|
-
+```
 Edit load\_vm\_attrs.rb and change the following section
-
+```ruby
   vm = $evm.vmdb('vm').find\_by\_name(vm\_name)
-
+```
 to
-
+```ruby
  vm = $evm.vmdb(:VmOrTemplate).find\_by\_name(vm\_name)
-
+```
 ###########
 # Testing methodology
 ###########
